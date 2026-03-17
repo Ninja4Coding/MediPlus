@@ -34,7 +34,7 @@
 
                     // ⚠️ DHYAN DEIN: Jab backend live ho jaye (Render par), 
                     // toh 'http://localhost:5000/api/upload' ko us live link se replace karna mat bhoolna!
-                    const response = await fetch('mediplus-backend-production-491d.up.railway.app', {
+                    const response = await fetch('https://mediplus-backend-9qqf.onrender.com', {
                         method: 'POST',
                         body: formData
                     });
