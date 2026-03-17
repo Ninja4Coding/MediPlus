@@ -20,9 +20,36 @@
         const hiddenElements = document.querySelectorAll('.slide-up, .slide-right, .slide-left');
         hiddenElements.forEach((el) => observer.observe(el));
 
-        // 3. FILE UPLOAD ALERT (Optional confirmation)
-        document.getElementById('prescriptionUpload').addEventListener('change', function () {
-            if (this.files && this.files.length > 0) {
-                alert("File Selected: " + this.files[0].name + "\n\n(Note: Backend is required to actually save this file)");
+        // 3. FILE UPLOAD FETCH API (Connects to Backend)
+        document.getElementById('prescriptionUpload').addEventListener('change', async function() {
+            if(this.files && this.files.length > 0) {
+                const file = this.files[0];
+                
+                // File ko FormData me daalna zaroori hai
+                const formData = new FormData();
+                formData.append('prescriptionFile', file); 
+
+                try {
+                    alert("Uploading... Please wait."); 
+
+                    // ⚠️ DHYAN DEIN: Jab backend live ho jaye (Render par), 
+                    // toh 'http://localhost:5000/api/upload' ko us live link se replace karna mat bhoolna!
+                    const response = await fetch('http://localhost:5000/api/upload', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const result = await response.json();
+                    
+                    if(response.ok) {
+                        alert("Success: " + result.message);
+                    } else {
+                        alert("Error: " + result.message);
+                    }
+
+                } catch (error) {
+                    console.error("Upload failed", error);
+                    alert("Upload failed! Make sure your backend server is running.");
+                }
             }
         });
