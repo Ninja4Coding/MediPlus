@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediPlus - Trusted Pharmacy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <input type="file" id="prescriptionUpload" style="display: none;" accept="image/*,.pdf">
+
+    <header id="main-nav">
+        <div class="logo">🩺 Medi<span>Plus</span></div>
+        <nav>
+            <a href="#">Medicines</a>
+            <a href="#">Wellness</a>
+            <a href="#">Lab Tests</a>
+            <button onclick="document.getElementById('prescriptionUpload').click()" class="nav-btn">Upload
+                Prescription</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text slide-right">
+            <h1>Your Health, <br>Delivered <span>Safely.</span></h1>
+            <p>Order medicines online, book lab tests, and consult doctors from the comfort of your home. Fast,
+                reliable, and 100% genuine products.</p>
+            <div class="btn-group">
+                <a href="#" class="btn">Order Medicines</a>
+                <a href="#" class="btn btn-outline">Call a Pharmacist</a>
+            </div>
+        </div>
+        <div class="hero-img slide-left">
+            <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?q=80&w=800&auto=format&fit=crop"
+                alt="Pharmacy and Medicines">
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2 class="section-title slide-up">Shop by Category</h2>
+        <p class="section-subtitle slide-up">Find everything you need for your family's health.</p>
+
+        <div class="grid">
+            <div class="card slide-up delay-1">
+                <div class="icon">💊</div>
+                <h3>Prescription Meds</h3>
+                <p>Upload your prescription and get medicines delivered right to your doorstep.</p>
+            </div>
+            <div class="card slide-up delay-2">
+                <div class="icon">🌿</div>
+                <h3>Vitamins & Wellness</h3>
+                <p>Boost your immunity with our premium range of vitamins and supplements.</p>
+            </div>
+            <div class="card slide-up delay-3">
+                <div class="icon">🧴</div>
+                <h3>Personal Care</h3>
+                <p>Top brand skincare, baby care, and everyday personal hygiene products.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta slide-up">
+        <h2>Have a Prescription?</h2>
+        <p>Don't want to search for medicines? Just upload your prescription, and our pharmacists will pack your order
+            instantly.</p>
+        <button onclick="document.getElementById('prescriptionUpload').click()" class="btn"
+            style="background-color: var(--light); color: var(--primary); border: none;">Upload Now</button>
+    </section>
+<script src="script.js"></script>
+</body>
+
+</html>
